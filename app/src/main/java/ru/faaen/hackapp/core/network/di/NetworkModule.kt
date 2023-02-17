@@ -67,7 +67,7 @@ class NetworkModule {
     }
 
     companion object {
-        const val BASE_URL = "http://84.201.179.38/api/v1/"
+        const val BASE_URL = ""
 
         const val OKHTTP_TAG = "OkHttp"
     }
