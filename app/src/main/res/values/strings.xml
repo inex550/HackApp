@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">hackapp</string>
+    
+    <string name="settings_prefs_filename">hackapp_prefs</string>
+
+    <string name="unknown_error">Неизвестная ошибка</string>
+    <string name="profile">Профиль</string>
+</resources>
