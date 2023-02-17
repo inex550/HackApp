@@ -3,6 +3,18 @@
     
     <string name="settings_prefs_filename">hackapp_prefs</string>
 
-    <string name="unknown_error">Неизвестная ошибка</string>
     <string name="profile">Профиль</string>
+
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="fio">ФИО</string>
+    <string name="register">Регистрация</string>
+
+    <string name="unknown_error">Неизвестная ошибка</string>
+    <string name="empty_field_error">Поле не заполнено</string>
+    <string name="incorrect_email_error">Email заполнен неверно</string>
+    <string name="short_password_error">Пароль должен быть длинее 6-ти символов</string>
+    <string name="fio_error">ФИО заполнено некорректно</string>
 </resources>

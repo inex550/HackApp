@@ -44,32 +44,32 @@ android {
 }
 
 dependencies {
-    implementation(dependencies.Dependencies.appCompat)
-    implementation(dependencies.Dependencies.material)
-    implementation(dependencies.Dependencies.constraintLayout)
-    implementation(dependencies.Dependencies.swipeRefreshLayout)
+    implementation(Dependencies.appCompat)
+    implementation(Dependencies.material)
+    implementation(Dependencies.constraintLayout)
+    implementation(Dependencies.swipeRefreshLayout)
 
-    implementation(dependencies.Dependencies.coreKtx)
-    implementation(dependencies.Dependencies.activityKtx)
-    implementation(dependencies.Dependencies.fragmentKtx)
-    implementation(dependencies.Dependencies.lifecycleRuntimeKtx)
-    implementation(dependencies.Dependencies.viewModelKtx)
+    implementation(Dependencies.coreKtx)
+    implementation(Dependencies.activityKtx)
+    implementation(Dependencies.fragmentKtx)
+    implementation(Dependencies.lifecycleRuntimeKtx)
+    implementation(Dependencies.viewModelKtx)
 
-    implementation(dependencies.Dependencies.retrofit)
-    implementation(dependencies.Dependencies.converterGson)
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.converterGson)
 
-    implementation(dependencies.Dependencies.cicerone)
+    implementation(Dependencies.cicerone)
 
-    implementation(dependencies.Dependencies.hilt)
-    kapt(dependencies.Dependencies.hiltCompiler)
+    implementation(Dependencies.hilt)
+    kapt(Dependencies.hiltCompiler)
 
-    implementation(dependencies.Dependencies.timber)
+    implementation(Dependencies.timber)
 
-    implementation(dependencies.Dependencies.coil)
-    implementation(dependencies.Dependencies.coilGif)
-    implementation(dependencies.Dependencies.coilVideo)
+    implementation(Dependencies.coil)
+    implementation(Dependencies.coilGif)
+    implementation(Dependencies.coilVideo)
 
-    implementation(dependencies.Dependencies.loggingInterceptor)
+    implementation(Dependencies.loggingInterceptor)
 
-    implementation(dependencies.Dependencies.shimmer)
+    implementation(Dependencies.shimmer)
 }

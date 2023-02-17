@@ -52,7 +52,7 @@ abstract class BaseViewModel<VS: BaseViewState, VA: BaseViewAction>(
                 val listenerResult = errorListener.proceedError(error)
 
                 if (listenerResult) {
-                    val errorAction = null
+                    val errorAction = provideDefaultMessageError(error.message.orEmpty())
 
                     errorAction?.let {
                         performAction(it)

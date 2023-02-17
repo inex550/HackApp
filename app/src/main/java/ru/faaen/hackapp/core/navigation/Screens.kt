@@ -1,11 +1,31 @@
 package ru.faaen.hackapp.core.navigation
 
+import com.github.terrakok.cicerone.Screen
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import ru.faaen.hackapp.features.auth.presentation.ui.LoginFragment
+import ru.faaen.hackapp.features.auth.presentation.ui.RegisterFragment
 import ru.faaen.hackapp.features.flow.FlowFragment
 import ru.faaen.hackapp.features.flow.TabFragment
+import ru.faaen.hackapp.features.home.HomeFragment
 import ru.faaen.hackapp.features.profile.ProfileFragment
 
 object Screens {
+
+    fun loginScreen(nextScreen: Screen? = null): FragmentScreen = FragmentScreen {
+        LoginFragment().apply {
+            this.nextScreen = nextScreen
+        }
+    }
+
+    fun registerScreen(nextScreen: Screen? = null): FragmentScreen = FragmentScreen {
+        RegisterFragment().apply {
+            this.nextScreen = nextScreen
+        }
+    }
+
+    fun homeScreen(): FragmentScreen = FragmentScreen {
+        HomeFragment()
+    }
 
     fun profileScreen(): FragmentScreen = FragmentScreen {
         ProfileFragment()

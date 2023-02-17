@@ -7,6 +7,7 @@ import com.github.terrakok.cicerone.Router
 import dagger.hilt.android.AndroidEntryPoint
 import ru.faaen.hackapp.core.common.utils.uiLazy
 import ru.faaen.hackapp.core.navigation.RouterProvider
+import ru.faaen.hackapp.core.navigation.Screens
 import ru.faaen.hackapp.core.navigation.navigator.HCNavigator
 import ru.faaen.hackapp.core.ui.base.BaseFragment
 import javax.inject.Inject
@@ -27,6 +28,10 @@ class AppActivity : AppCompatActivity(), RouterProvider {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app)
+
+        if (savedInstanceState == null) {
+            router.newRootScreen(Screens.loginScreen())
+        }
     }
 
     override fun provideRouter(): Router {
