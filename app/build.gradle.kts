@@ -9,15 +9,16 @@ plugins {
     id("com.google.dagger.hilt.android")
 
     id("kotlin-kapt")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "ru.faaen.hackapp"
         minSdk = 24
-        targetSdk = 32
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -61,6 +62,8 @@ dependencies {
     implementation(Dependencies.cicerone)
 
     implementation(Dependencies.hilt)
+    implementation("com.google.android.gms:play-services-maps:18.0.2")
+    implementation("androidx.appcompat:appcompat:1.4.1")
     kapt(Dependencies.hiltCompiler)
 
     implementation(Dependencies.timber)

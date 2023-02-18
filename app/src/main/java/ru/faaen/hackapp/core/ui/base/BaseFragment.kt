@@ -38,14 +38,14 @@ abstract class BaseFragment(
 
     fun showSnackbarError(message: String) {
         Snackbar.make(requireView(), message, Snackbar.LENGTH_LONG)
-            .setBackgroundTint(Color.GREEN)
+            .setBackgroundTint(Color.RED)
             .setTextColor(Color.WHITE)
             .show()
     }
 
     fun showSnackbarSuccess(message: String) {
         Snackbar.make(requireView(), message, Snackbar.LENGTH_LONG)
-            .setBackgroundTint(Color.RED)
+            .setBackgroundTint(Color.GREEN)
             .setTextColor(Color.WHITE)
             .show()
     }

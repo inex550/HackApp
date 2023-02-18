@@ -7,6 +7,7 @@ import ru.faaen.hackapp.features.auth.presentation.ui.RegisterFragment
 import ru.faaen.hackapp.features.flow.FlowFragment
 import ru.faaen.hackapp.features.flow.TabFragment
 import ru.faaen.hackapp.features.home.HomeFragment
+import ru.faaen.hackapp.features.map.MapsFragment
 import ru.faaen.hackapp.features.profile.ProfileFragment
 
 object Screens {
@@ -37,5 +38,9 @@ object Screens {
 
     fun tabScreen(tag: String): FragmentScreen = FragmentScreen {
         TabFragment.newInstance(tag)
+    }
+
+    fun mapScreen(): FragmentScreen = FragmentScreen {
+        MapsFragment()
     }
 }

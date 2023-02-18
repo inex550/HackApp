@@ -30,7 +30,7 @@ class AppActivity : AppCompatActivity(), RouterProvider {
         setContentView(R.layout.activity_app)
 
         if (savedInstanceState == null) {
-            router.newRootScreen(Screens.loginScreen())
+            router.newRootScreen(Screens.homeScreen())
         }
     }
 
