@@ -59,7 +59,8 @@ class HomeFragment : BaseFragment(
         postRotated(5f) {
             postRotated(-5f) {
                 postRotated(0f) {
-                    if (!(lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED))) return@postRotated
+                    if (!(lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)))
+                        return@postRotated
 
                     binding.russiaIv.postDelayed(3000) {
                         animateRussia()
