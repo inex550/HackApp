@@ -13,7 +13,8 @@
         android:src="@drawable/ic_baseline_horizontal_rule_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/tv_title_map"
@@ -49,6 +50,7 @@
         android:text="закрыть"
         app:backgroundTint="@color/red"
         app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/bt_more_map"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +65,7 @@
         android:text="подробнее"
         app:backgroundTint="@color/green"
         app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/bt_close_map"
         app:layout_constraintTop_toBottomOf="@id/tv_description_map"

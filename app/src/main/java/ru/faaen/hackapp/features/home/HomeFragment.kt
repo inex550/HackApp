@@ -14,8 +14,32 @@ class HomeFragment : BaseFragment(
 
     override fun setupUi() {
         with(binding) {
+            imEarthHome.animate().apply {
+                duration = 500
+                scaleX(0.5f)
+                scaleY(0.5f)
+                scaleXBy(0.5f)
+                scaleYBy(0.5f)
+            }.withEndAction {
+                imEarthHome.animate().apply {
+                    duration = 500
+                    scaleX(-0.5f)
+                    scaleY(-0.5f)
+                    scaleXBy(-0.5f)
+                    scaleYBy(-0.5f)
+                }.start()
+            }
+
             imEarthHome.setOnClickListener {
-                requireLocalRouter().navigateTo(Screens.mapScreen())
+                it.animate().apply {
+                    duration = 300
+                    scaleX(-0.2f)
+                    scaleY(-0.2f)
+                    scaleXBy(-0.2f)
+                    scaleYBy(-0.2f)
+                }.withEndAction {
+                    requireLocalRouter().navigateTo(Screens.mapScreen())
+                }.start()
             }
             imNewsHome.setOnClickListener {
                 showSnackbarSuccess("news")
