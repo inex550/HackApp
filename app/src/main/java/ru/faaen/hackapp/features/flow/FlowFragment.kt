@@ -1,5 +1,7 @@
 package ru.faaen.hackapp.features.flow
 
+import android.os.Bundle
+import android.view.View
 import ru.faaen.hackapp.R
 import ru.faaen.hackapp.core.navigation.Screens
 import ru.faaen.hackapp.core.ui.base.BaseFragment
@@ -13,9 +15,18 @@ class FlowFragment: BaseFragment(R.layout.fragment_flow) {
     override fun setupUi() {
         binding.navBnv.setOnItemSelectedListener { item ->
             when(item.itemId) {
+                R.id.item_search -> selectTab(TabTag.TAG_SEARCH.tag)
+                R.id.item_home -> selectTab(TabTag.TAG_HOME.tag)
                 R.id.item_profile -> selectTab(TabTag.TAG_PROFILE.tag)
             }
             true
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (savedInstanceState == null) {
+            binding.navBnv.selectedItemId = R.id.item_home
         }
     }
 
@@ -45,5 +56,13 @@ class FlowFragment: BaseFragment(R.layout.fragment_flow) {
         }
 
         transaction.commitNow()
+    }
+
+    private fun visibleFragment(): BaseFragment? {
+        return childFragmentManager.fragments.lastOrNull { it.isVisible } as? BaseFragment
+    }
+
+    override fun onBackPressed(): Boolean {
+        return visibleFragment()?.onBackPressed() ?: super.onBackPressed()
     }
 }

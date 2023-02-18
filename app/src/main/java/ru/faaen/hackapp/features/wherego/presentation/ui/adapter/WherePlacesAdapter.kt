@@ -31,6 +31,11 @@ class WherePlacesAdapter(
             root.setOnClickListener {
                 listener.placeClicked(item)
             }
+
+            likeIv.setOnClickListener {
+                item.isLiked = !item.isLiked
+                likeIv.setImageResource(if (item.isLiked) R.drawable.ic_heart_filled else R.drawable.ic_heart)
+            }
         }
     }
 

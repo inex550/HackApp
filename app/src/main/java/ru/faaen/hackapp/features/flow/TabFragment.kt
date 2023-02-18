@@ -9,6 +9,7 @@ import com.github.terrakok.cicerone.Screen
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import ru.faaen.hackapp.R
 import ru.faaen.hackapp.core.common.utils.uiLazy
+import ru.faaen.hackapp.core.navigation.RouterProvider
 import ru.faaen.hackapp.core.navigation.Screens
 import ru.faaen.hackapp.core.navigation.navigator.HCNavigator
 import ru.faaen.hackapp.core.navigation.sub.CiceroneHolder
@@ -18,7 +19,7 @@ import ru.faaen.hackapp.features.profile.ProfileFragment
 
 class TabFragment: BaseFragment(
     layoutResId = R.layout.fragment_tab
-) {
+), RouterProvider {
     private val screenTag: String by uiLazy {
         requireArguments().getString(ARG_TAG).orEmpty()
     }
@@ -62,9 +63,15 @@ class TabFragment: BaseFragment(
 
     private fun screenByTag(tag: String): Screen {
         return when(tag) {
+            TabTag.TAG_SEARCH.tag -> Screens.searchScreen()
+            TabTag.TAG_HOME.tag -> Screens.homeScreen()
             TabTag.TAG_PROFILE.tag -> Screens.profileScreen()
             else -> throw IllegalArgumentException("No such fragment with tag \"$tag\"")
         }
+    }
+
+    override fun provideRouter(): Router {
+        return router
     }
 
     override fun onResume() {
@@ -86,8 +93,8 @@ class TabFragment: BaseFragment(
     }
 
     companion object {
-        private const val ARG_TAG = "ARG_TAG"
 
+        private const val ARG_TAG = "ARG_TAG"
         fun newInstance(tag: String): TabFragment = TabFragment().withArgs {
             putString(ARG_TAG, tag)
         }

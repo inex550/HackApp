@@ -10,4 +10,5 @@ data class WherePlaceItem(
     val countOptions: Int,
     val seatCost: String,
     val stayDuration: String,
+    var isLiked: Boolean = false,
 ): BaseItem

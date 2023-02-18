@@ -25,9 +25,6 @@ abstract class BaseFragment(
 
     open fun onBackPressed(): Boolean = false
 
-    var firstInit: Boolean = false
-        private set
-
     val viewLifecycle: Lifecycle
         get() = viewLifecycleOwner.lifecycle
 
@@ -55,7 +52,6 @@ abstract class BaseFragment(
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        firstInit = savedInstanceState == null
         setupUi()
     }
 }

@@ -9,6 +9,7 @@ import ru.faaen.hackapp.features.flow.TabFragment
 import ru.faaen.hackapp.features.home.HomeFragment
 import ru.faaen.hackapp.features.map.MapsFragment
 import ru.faaen.hackapp.features.profile.ProfileFragment
+import ru.faaen.hackapp.features.search.SearchFragment
 import ru.faaen.hackapp.features.wherego.presentation.ui.WhereGoFragment
 
 object Screens {
@@ -27,6 +28,10 @@ object Screens {
 
     fun whereGoScreen(): FragmentScreen = FragmentScreen {
         WhereGoFragment()
+    }
+
+    fun searchScreen(): FragmentScreen = FragmentScreen {
+        SearchFragment()
     }
 
     fun homeScreen(): FragmentScreen = FragmentScreen {

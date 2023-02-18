@@ -22,4 +22,5 @@
     <string name="short_password_error">Пароль должен быть длинее 6-ти символов</string>
     <string name="fio_error">ФИО заполнено некорректно</string>
     <string name="search">Поиск</string>
+    <string name="home">Домашняя</string>
 </resources>
