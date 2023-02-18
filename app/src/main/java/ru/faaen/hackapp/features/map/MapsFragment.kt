@@ -1,5 +1,6 @@
 package ru.faaen.hackapp.features.map
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -26,7 +27,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
     private val callback = OnMapReadyCallback { googleMap ->
 
         for (i in cities.indices) {
-            var city = LatLng(cities[i].latitude, cities[i].longitude)
+            val city = LatLng(cities[i].latitude, cities[i].longitude)
             googleMap.addMarker(
                 MarkerOptions()
                     .position(city)
@@ -65,6 +66,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
         mapFragment?.getMapAsync(callback)
     }
 
+    @SuppressLint("InflateParams")
     override fun onMarkerClick(marker: Marker): Boolean {
         val dialog = BottomSheetDialog(requireContext())
 
