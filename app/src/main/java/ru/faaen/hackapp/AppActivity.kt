@@ -47,11 +47,7 @@ class AppActivity : AppCompatActivity(), RouterProvider {
         setContentView(R.layout.activity_app)
 
         if (savedInstanceState == null) {
-<<<<<<< HEAD
-            router.newRootScreen(Screens.whereGoScreen())
-=======
             router.newRootScreen(Screens.homeScreen())
->>>>>>> 8625a86716daa2d2819704bab7d1f589d3239c74
         }
     }
 

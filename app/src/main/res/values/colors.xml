@@ -6,13 +6,13 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-<<<<<<< HEAD
+
     <color name="transparent">#00000000</color>
 
     <color name="dark">#333333</color>
-=======
+
     <color name="grey">#605B5B</color>
     <color name="red">#E91E63</color>
     <color name="green">#4CAF50</color>
->>>>>>> 8625a86716daa2d2819704bab7d1f589d3239c74
+
 </resources>
