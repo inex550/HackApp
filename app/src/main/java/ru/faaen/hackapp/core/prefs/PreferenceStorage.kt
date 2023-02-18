@@ -9,6 +9,10 @@ class PreferenceStorage @Inject constructor(
 ) {
     var token: String? by StringPreference(prefs, KEY_TOKEN, null)
 
+    fun isAuthorized(): Boolean {
+        return token != null
+    }
+
     companion object {
         private const val KEY_TOKEN = "KEY_TOKEN"
     }
