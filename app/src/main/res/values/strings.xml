@@ -5,16 +5,21 @@
 
     <string name="profile">Профиль</string>
 
-    <string name="email">Email</string>
+    <string name="email">Электронная почта</string>
     <string name="password">Пароль</string>
     <string name="sign_in">Войти</string>
     <string name="forgot_password">Забыли пароль?</string>
     <string name="fio">ФИО</string>
     <string name="register">Регистрация</string>
 
+    <string name="count_options">Кол-во вариантов:\n<b>%d</b></string>
+    <string name="seat_cost">Стоимость места:\n<b>%s</b></string>
+    <string name="stay_duration">Продолжительность пребывания:\n<b>%s</b></string>
+
     <string name="unknown_error">Неизвестная ошибка</string>
     <string name="empty_field_error">Поле не заполнено</string>
     <string name="incorrect_email_error">Email заполнен неверно</string>
     <string name="short_password_error">Пароль должен быть длинее 6-ти символов</string>
     <string name="fio_error">ФИО заполнено некорректно</string>
+    <string name="search">Поиск</string>
 </resources>

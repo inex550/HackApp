@@ -2,8 +2,11 @@ package ru.faaen.hackapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
+import com.github.terrakok.cicerone.androidx.FragmentScreen
 import dagger.hilt.android.AndroidEntryPoint
 import ru.faaen.hackapp.core.common.utils.uiLazy
 import ru.faaen.hackapp.core.navigation.RouterProvider
@@ -22,7 +25,21 @@ class AppActivity : AppCompatActivity(), RouterProvider {
     lateinit var navigatorHolder: NavigatorHolder
 
     private val navigator: HCNavigator by uiLazy {
-        HCNavigator(this, R.id.app_container)
+        object : HCNavigator(this, R.id.app_container) {
+            override fun setupFragmentTransaction(
+                screen: FragmentScreen,
+                fragmentTransaction: FragmentTransaction,
+                currentFragment: Fragment?,
+                nextFragment: Fragment
+            ) {
+                fragmentTransaction.setCustomAnimations(
+                    R.anim.fade_in,
+                    R.anim.fade_out,
+                    R.anim.fade_in,
+                    R.anim.fade_out,
+                )
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +47,7 @@ class AppActivity : AppCompatActivity(), RouterProvider {
         setContentView(R.layout.activity_app)
 
         if (savedInstanceState == null) {
-            router.newRootScreen(Screens.loginScreen())
+            router.newRootScreen(Screens.whereGoScreen())
         }
     }
 

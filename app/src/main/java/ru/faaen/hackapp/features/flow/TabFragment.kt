@@ -1,9 +1,12 @@
 package ru.faaen.hackapp.features.flow
 
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.Screen
+import com.github.terrakok.cicerone.androidx.FragmentScreen
 import ru.faaen.hackapp.R
 import ru.faaen.hackapp.core.common.utils.uiLazy
 import ru.faaen.hackapp.core.navigation.Screens
@@ -33,7 +36,21 @@ class TabFragment: BaseFragment(
     }
 
     private val navigator: HCNavigator by uiLazy {
-        HCNavigator(requireActivity(), R.id.tab_container, childFragmentManager)
+        object : HCNavigator(requireActivity(), R.id.tab_container, childFragmentManager) {
+            override fun setupFragmentTransaction(
+                screen: FragmentScreen,
+                fragmentTransaction: FragmentTransaction,
+                currentFragment: Fragment?,
+                nextFragment: Fragment
+            ) {
+                fragmentTransaction.setCustomAnimations(
+                    R.anim.fade_in,
+                    R.anim.fade_out,
+                    R.anim.fade_in,
+                    R.anim.fade_out,
+                )
+            }
+        }
     }
 
     override fun setupUi() {
@@ -48,6 +65,16 @@ class TabFragment: BaseFragment(
             TabTag.TAG_PROFILE.tag -> Screens.profileScreen()
             else -> throw IllegalArgumentException("No such fragment with tag \"$tag\"")
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        navigatorHolder.setNavigator(navigator)
+    }
+
+    override fun onPause() {
+        navigatorHolder.removeNavigator()
+        super.onPause()
     }
 
     private fun visibleFragment(): BaseFragment? {

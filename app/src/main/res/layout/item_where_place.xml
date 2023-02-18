@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    android:layout_marginVertical="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/place_iv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:src="@color/light_grey"
+            app:shapeAppearanceOverlay="@style/ShapeCorner10"
+            app:layout_constraintDimensionRatio="3:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="12dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="12dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/center_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Студенческое общежитие ПВГУС"
+            style="@style/TB_14"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/place_iv"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"/>
+
+        <TextView
+            android:id="@+id/city_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Тольяти"
+            style="@style/TB_14"
+            android:textColor="@color/primary"
+            android:layout_marginTop="6dp"
+            app:layout_constraintTop_toBottomOf="@id/name_tv"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"/>
+
+        <TextView
+            android:id="@+id/count_options_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/TN_12"
+            android:textColor="@color/dark"
+            android:text="@string/count_options"
+            app:layout_constraintTop_toBottomOf="@id/city_tv"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"/>
+
+        <TextView
+            android:id="@+id/seat_cost_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/TN_12"
+            android:textColor="@color/dark"
+            android:text="@string/count_options"
+            app:layout_constraintTop_toBottomOf="@id/city_tv"
+            app:layout_constraintStart_toStartOf="@id/center_guideline"/>
+
+        <TextView
+            android:id="@+id/stay_duration_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TN_12"
+            android:textColor="@color/dark"
+            android:text="@string/stay_duration"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/count_options_tv"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"/>
+
+        <ImageView
+            android:id="@+id/like_iv"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/ripple_oval"
+            android:src="@drawable/ic_heart"
+            android:layout_marginBottom="8dp"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/right_guideline"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

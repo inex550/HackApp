@@ -8,6 +8,7 @@ import ru.faaen.hackapp.features.flow.FlowFragment
 import ru.faaen.hackapp.features.flow.TabFragment
 import ru.faaen.hackapp.features.home.HomeFragment
 import ru.faaen.hackapp.features.profile.ProfileFragment
+import ru.faaen.hackapp.features.wherego.presentation.ui.WhereGoFragment
 
 object Screens {
 
@@ -21,6 +22,10 @@ object Screens {
         RegisterFragment().apply {
             this.nextScreen = nextScreen
         }
+    }
+
+    fun whereGoScreen(): FragmentScreen = FragmentScreen {
+        WhereGoFragment()
     }
 
     fun homeScreen(): FragmentScreen = FragmentScreen {

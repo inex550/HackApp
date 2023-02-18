@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="OutlinedInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/outlined_stroke_color</item>
+        <item name="android:textColorHint">@color/light_grey</item>
+        <item name="endIconTint">@color/light_grey</item>
+        <item name="startIconTint">@color/light_grey</item>
+    </style>
+
+    <style name="HCEditText">
+
+    </style>
+
+    <style name="OutlinedButton">
+        <item name="cornerRadius">@dimen/max_radius</item>
+        <item name="android:elevation">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="TN_14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TN_12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TB_14" parent="TN_14">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ShapeCorner10">
+        <item name="cornerSize">10%</item>
+    </style>
+
+</resources>

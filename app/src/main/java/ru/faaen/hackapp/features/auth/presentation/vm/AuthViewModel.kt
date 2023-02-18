@@ -5,10 +5,7 @@ import com.github.terrakok.cicerone.Screen
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
-import ru.faaen.hackapp.core.common.ext.EditableSpecError
-import ru.faaen.hackapp.core.common.ext.SpecError
-import ru.faaen.hackapp.core.common.ext.hasErrors
-import ru.faaen.hackapp.core.common.ext.setError
+import ru.faaen.hackapp.core.common.ext.*
 import ru.faaen.hackapp.core.navigation.Screens
 import ru.faaen.hackapp.core.ui.base.BaseViewModel
 import ru.faaen.hackapp.features.auth.data.repo.AuthRepository
@@ -50,6 +47,8 @@ class AuthViewModel @AssistedInject constructor(
             return
         }
 
+        performAction(provideDefaultSpecError(emptySpec()))
+
         launchIOCoroutine(
             finallyListener = { updateState { copy(isLoading = false) } }
         ) {
@@ -73,6 +72,8 @@ class AuthViewModel @AssistedInject constructor(
             performAction(provideDefaultSpecError(spec))
             return
         }
+
+        performAction(provideDefaultSpecError(emptySpec()))
 
         launchIOCoroutine(
             finallyListener = { updateState { copy(isLoading = false) } }

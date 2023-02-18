@@ -1,9 +1,12 @@
 package ru.faaen.hackapp.features.auth.presentation.ui
 
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.github.terrakok.cicerone.Screen
 import dagger.hilt.android.AndroidEntryPoint
 import ru.faaen.hackapp.R
 import ru.faaen.hackapp.core.common.ext.SpecError
+import ru.faaen.hackapp.core.navigation.navigator.FragmentTransactionHandler
 import ru.faaen.hackapp.core.ui.base.BaseFragment
 import ru.faaen.hackapp.core.ui.base.BaseMvvmFragment
 import ru.faaen.hackapp.core.ui.ext.enableError

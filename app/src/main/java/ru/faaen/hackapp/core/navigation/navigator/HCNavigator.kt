@@ -8,7 +8,7 @@ import com.github.terrakok.cicerone.androidx.AppNavigator
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import ru.faaen.hackapp.core.navigation.navigator.FragmentTransactionHandler
 
-class HCNavigator(
+open class HCNavigator(
     activity: FragmentActivity,
     containerId: Int,
     fragmentManager: FragmentManager = activity.supportFragmentManager
