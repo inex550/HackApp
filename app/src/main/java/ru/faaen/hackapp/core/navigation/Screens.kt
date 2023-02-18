@@ -31,7 +31,10 @@ object Screens {
     }
 
     fun searchScreen(): FragmentScreen = FragmentScreen {
-        SearchFragment()
+       // SearchFragment()
+        LoginFragment().apply {
+            this.nextScreen = nextScreen
+        }
     }
 
     fun homeScreen(): FragmentScreen = FragmentScreen {
