@@ -13,12 +13,12 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 32
 
     defaultConfig {
         applicationId = "ru.faaen.hackapp"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
 

@@ -15,6 +15,17 @@
     <string name="count_options">Кол-во вариантов:\n<b>%d</b></string>
     <string name="seat_cost">Стоимость места:\n<b>%s</b></string>
     <string name="stay_duration">Продолжительность пребывания:\n<b>%s</b></string>
+    <string name="dates">Даты проведения:\n%s - %s</string>
+
+    <plurals name="friends_count">
+        <item quantity="zero">%d твоих друзей посетили это мероприятие</item>
+        <item quantity="one">%d твой друг посетили это мероприятие</item>
+        <item quantity="two">%d твоих друга посетили это мероприятие</item>
+        <item quantity="few">%d твоих друга посетили это мероприятие</item>
+        <item quantity="many">%d твоих друзей посетили это мероприятие</item>
+        <item quantity="other">%d твоих труга посетили это мероприятие</item>
+    </plurals>
+    <string name="friends_count">3 твоих друга посетили это мероприятие</string>
 
     <string name="unknown_error">Неизвестная ошибка</string>
     <string name="empty_field_error">Поле не заполнено</string>
@@ -23,4 +34,10 @@
     <string name="fio_error">ФИО заполнено некорректно</string>
     <string name="search">Поиск</string>
     <string name="home">Домашняя</string>
+    <string name="news">Новости</string>
+    <string name="places">Места</string>
+    <string name="shop">Лавка</string>
+    <string name="about_project">О проекте</string>
+    <string name="events">События</string>
+    <string name="friends">Друзья</string>
 </resources>

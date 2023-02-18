@@ -1,137 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:animateLayoutChanges="true">
+    
+    <ImageView
+        android:id="@+id/russia_iv"
+        android:layout_width="300dp"
+        android:layout_height="270dp"
+        android:src="@drawable/ic_russia"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/hand_iv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_hand"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toBottomOf="@id/russia_iv"
+        app:layout_constraintEnd_toEndOf="@id/russia_iv"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Клик-клик"
+        style="@style/TB_14"
+        android:textColor="#5AA19F"
+        android:layout_marginStart="-10dp"
+        app:layout_constraintBottom_toBottomOf="@id/hand_iv"
+        app:layout_constraintStart_toEndOf="@id/hand_iv"/>
+
+    <View
+        android:id="@+id/view_home"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttons_container"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.7">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/im_earth_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_earth"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
-
-            <ImageView
-                android:id="@+id/im_mountain_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="22dp"
-                android:src="@drawable/ic_mauntain"
-                app:layout_constraintBottom_toTopOf="@+id/view_home"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="ContentDescription" />
-
-            <View
-                android:id="@+id/view_home"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/buttons_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:weightSum="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
 
-            <ImageView
-                android:id="@+id/im_news_home"
+            <LinearLayout
+                android:id="@+id/news_ll"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_news"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="ContentDescription" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:elevation="4dp"
+                android:background="@drawable/shape_home_btn_gr_primary">
 
-            <ImageView
-                android:id="@+id/im_where_go_home"
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:src="@drawable/ic_news"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TB_14"
+                    android:textColor="@color/white"
+                    android:text="@string/news"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/places_ll"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_where_go"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="ContentDescription" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:elevation="4dp"
+                android:background="@drawable/shape_home_btn_gr_green">
 
-            <ImageView
-                android:id="@+id/im_shop_home"
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:src="@drawable/ic_places"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TB_14"
+                    android:textColor="@color/white"
+                    android:text="@string/places"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/shop_ll"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_shop"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="ContentDescription" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:elevation="4dp"
+                android:background="@drawable/shape_home_btn_gr_primary">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_shop"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TB_14"
+                    android:textColor="@color/white"
+                    android:text="@string/shop"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
 
-            <ImageView
-                android:id="@+id/im_info_home"
+            <LinearLayout
+                android:id="@+id/about_ll"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_info"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="ContentDescription" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:elevation="4dp"
+                android:background="@drawable/shape_home_btn_gr_primary">
 
-            <ImageView
-                android:id="@+id/im_why_go_home"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_about"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TB_14"
+                    android:textColor="@color/white"
+                    android:text="@string/about_project"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/events_ll"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_why_go"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="ContentDescription" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:elevation="4dp"
+                android:background="@drawable/shape_home_btn_gr_primary">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_events"/>
 
-            <ImageView
-                android:id="@+id/im_friend_home"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TB_14"
+                    android:textColor="@color/white"
+                    android:text="@string/events"/>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/friends_ll"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_friend"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="ContentDescription" />
+                android:elevation="4dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/shape_home_btn_gr_primary">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_friends"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TB_14"
+                    android:textColor="@color/white"
+                    android:text="@string/friends"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
