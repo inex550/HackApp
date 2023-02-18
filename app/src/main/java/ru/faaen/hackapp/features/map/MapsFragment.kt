@@ -4,16 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import androidx.fragment.app.Fragment
-
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -21,8 +14,15 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import ru.faaen.hackapp.R
+import ru.faaen.hackapp.core.ui.base.BaseFragment
+import ru.faaen.hackapp.core.ui.ext.viewBinding
+import ru.faaen.hackapp.databinding.FragmentMapsBinding
 
-class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
+class MapsFragment : BaseFragment(
+    layoutResId = R.layout.fragment_maps
+), GoogleMap.OnMarkerClickListener {
+
+    private val binding by viewBinding(FragmentMapsBinding::bind)
 
     private val callback = OnMapReadyCallback { googleMap ->
 
@@ -52,26 +52,18 @@ class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
     }
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_maps, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun setupUi() {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+        binding.toolbarMap.setNavigationOnClickListener {
+            onBackPressed()
+        }
     }
 
     @SuppressLint("InflateParams")
     override fun onMarkerClick(marker: Marker): Boolean {
         val dialog = BottomSheetDialog(requireContext())
-
         val view = layoutInflater.inflate(R.layout.button_sheet, null)
-
         val btnClose = view.findViewById<Button>(R.id.bt_close_map)
         val btnMore = view.findViewById<Button>(R.id.bt_more_map)
         val tvTitle = view.findViewById<TextView>(R.id.tv_title_map)
@@ -91,5 +83,10 @@ class MapsFragment : Fragment(), GoogleMap.OnMarkerClickListener {
 
         return true
 
+    }
+
+    override fun onBackPressed(): Boolean {
+        requireLocalRouter().exit()
+        return true
     }
 }

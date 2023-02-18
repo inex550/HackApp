@@ -23,4 +23,6 @@
     <string name="fio_error">ФИО заполнено некорректно</string>
     <string name="search">Поиск</string>
     <string name="home">Домашняя</string>
+    <string name="team_faane">Team FAANE</string>
+    <string name="team_faane_mail">.@TeamFaane</string>
 </resources>
