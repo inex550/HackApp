@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">hackapp</string>
-    
+
     <string name="settings_prefs_filename">hackapp_prefs</string>
 
     <string name="profile">Профиль</string>
@@ -44,6 +44,7 @@
 
     <string name="team_faane">Team FAANE</string>
     <string name="team_faane_mail">.@TeamFaane</string>
+
     <string name="date">Дата</string>
     <string name="select_date">Выберите дату</string>
     <string name="good_morning">Добре утро %s!</string>
@@ -57,5 +58,7 @@
     <string name="proforientation">Профориентация</string>
     <string name="timeout_error">Время ожидания истекло</string>
     <string name="ssl_handshake_error">Проверьте дату и время на устройстве</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

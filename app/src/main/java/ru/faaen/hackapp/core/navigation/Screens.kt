@@ -2,15 +2,20 @@ package ru.faaen.hackapp.core.navigation
 
 import com.github.terrakok.cicerone.Screen
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import ru.faaen.hackapp.features.aboutapp.ui.AboutAppFragment
 import ru.faaen.hackapp.features.auth.presentation.ui.LoginFragment
 import ru.faaen.hackapp.features.auth.presentation.ui.RegisterFragment
 import ru.faaen.hackapp.features.events.presentation.ui.EventsFragment
 import ru.faaen.hackapp.features.news.presentation.NewsFragment
 import ru.faaen.hackapp.features.flow.FlowFragment
 import ru.faaen.hackapp.features.flow.TabFragment
+import ru.faaen.hackapp.features.friends.ui.FriendsFragment
 import ru.faaen.hackapp.features.home.HomeFragment
 import ru.faaen.hackapp.features.map.MapsFragment
-import ru.faaen.hackapp.features.profile.ProfileFragment
+import ru.faaen.hackapp.features.profile.presentation.ui.EventProfileFragment
+import ru.faaen.hackapp.features.profile.presentation.ui.InfoAboutMeFragment
+import ru.faaen.hackapp.features.profile.presentation.ui.LifeProfileFragment
+import ru.faaen.hackapp.features.profile.presentation.ui.ProfileFragment
 import ru.faaen.hackapp.features.search.SearchFragment
 import ru.faaen.hackapp.features.shop.ui.ShopFragment
 import ru.faaen.hackapp.features.splash.NewUserSplashFragment
@@ -78,4 +83,25 @@ object Screens {
     fun mapScreen(): FragmentScreen = FragmentScreen {
         MapsFragment()
     }
+
+    fun infoAboutMeScreen(): FragmentScreen = FragmentScreen {
+        InfoAboutMeFragment()
+    }
+
+    fun eventProfileScreen(): FragmentScreen = FragmentScreen {
+        EventProfileFragment()
+    }
+
+    fun lifeProfileScreen(): FragmentScreen = FragmentScreen {
+        LifeProfileFragment()
+    }
+
+    fun aboutAppScreen(): FragmentScreen = FragmentScreen {
+        AboutAppFragment()
+    }
+
+    fun friendsScreen(): FragmentScreen = FragmentScreen {
+        FriendsFragment()
+    }
+
 }
