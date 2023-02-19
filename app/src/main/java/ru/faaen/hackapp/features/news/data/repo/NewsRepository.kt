@@ -12,7 +12,7 @@ class NewsRepository @Inject constructor() {
         return List(3) { pos ->
             NewsItem(
                 id = pos.toString(),
-                image = "",
+                image = "https://i.ibb.co/QbYc6bw/Screen-Shot-2023-02-18-at-4-46-1.png",
                 name = "Студенты технических специальностей из 4 регионов России пройдут программу практической подготовки на одном из ведущих предприятий российской космической отрасли",
                 tags = listOf(
                     "#Студтуризм",
