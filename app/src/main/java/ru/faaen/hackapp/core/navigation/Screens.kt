@@ -2,10 +2,12 @@ package ru.faaen.hackapp.core.navigation
 
 import com.github.terrakok.cicerone.Screen
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import ru.faaen.hackapp.features.aboutapp.ui.AboutAppFragment
 import ru.faaen.hackapp.features.auth.presentation.ui.LoginFragment
 import ru.faaen.hackapp.features.auth.presentation.ui.RegisterFragment
 import ru.faaen.hackapp.features.flow.FlowFragment
 import ru.faaen.hackapp.features.flow.TabFragment
+import ru.faaen.hackapp.features.friends.ui.FriendsFragment
 import ru.faaen.hackapp.features.home.HomeFragment
 import ru.faaen.hackapp.features.map.MapsFragment
 import ru.faaen.hackapp.features.profile.presentation.ui.EventProfileFragment
@@ -67,6 +69,14 @@ object Screens {
 
     fun lifeProfileScreen(): FragmentScreen = FragmentScreen {
         LifeProfileFragment()
+    }
+
+    fun aboutAppScreen(): FragmentScreen = FragmentScreen {
+        AboutAppFragment()
+    }
+
+    fun friendsScreen(): FragmentScreen = FragmentScreen {
+        FriendsFragment()
     }
 
 }

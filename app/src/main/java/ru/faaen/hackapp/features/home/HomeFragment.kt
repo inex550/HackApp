@@ -42,7 +42,9 @@ class HomeFragment : BaseFragment(
             }
 
             aboutLl.setOnClickListener {
-                bounceBtnClick(it)
+                bounceBtnClick(it).post {
+                    requireLocalRouter().navigateTo(Screens.aboutAppScreen())
+                }
             }
 
             eventsLl.setOnClickListener {
@@ -50,7 +52,9 @@ class HomeFragment : BaseFragment(
             }
 
             friendsLl.setOnClickListener {
-                bounceBtnClick(it)
+                bounceBtnClick(it).post {
+                    requireLocalRouter().navigateTo(Screens.friendsScreen())
+                }
             }
         }
     }
