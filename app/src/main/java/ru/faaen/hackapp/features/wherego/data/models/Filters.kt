@@ -49,7 +49,7 @@ enum class Filters(
         FilterOption("Омская область"),
         FilterOption("Оренбургская область"),
     )),
-    LOCALLY("locally", "Населенный пункт", listOf(
+    LOCALLY("locally", "Город", listOf(
         FilterOption("Артыбаш"),
         FilterOption("Архангельск"),
         FilterOption("Астрахань"),

@@ -7,9 +7,9 @@ import javax.inject.Inject
 
 class WhereGoUiBuilder @Inject constructor() {
     private val filters: List<FilterItem> = listOf(
+        FilterItem(Filters.LOCALLY),
         FilterItem(Filters.FEDERAL_DISTRICT),
         FilterItem(Filters.SUBJECT_RF),
-        FilterItem(Filters.LOCALLY),
         FilterItem(Filters.EDUCATIONAL_ORGANIZATION),
         FilterItem(Filters.PLACING_TYPE),
         FilterItem(Filters.NUTRITION),

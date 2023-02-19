@@ -8,7 +8,10 @@ import ru.faaen.hackapp.features.flow.FlowFragment
 import ru.faaen.hackapp.features.flow.TabFragment
 import ru.faaen.hackapp.features.home.HomeFragment
 import ru.faaen.hackapp.features.map.MapsFragment
-import ru.faaen.hackapp.features.profile.ProfileFragment
+import ru.faaen.hackapp.features.profile.presentation.ui.EventProfileFragment
+import ru.faaen.hackapp.features.profile.presentation.ui.InfoAboutMeFragment
+import ru.faaen.hackapp.features.profile.presentation.ui.LifeProfileFragment
+import ru.faaen.hackapp.features.profile.presentation.ui.ProfileFragment
 import ru.faaen.hackapp.features.search.SearchFragment
 import ru.faaen.hackapp.features.wherego.presentation.ui.WhereGoFragment
 
@@ -53,4 +56,17 @@ object Screens {
     fun mapScreen(): FragmentScreen = FragmentScreen {
         MapsFragment()
     }
+
+    fun infoAboutMeScreen(): FragmentScreen = FragmentScreen {
+        InfoAboutMeFragment()
+    }
+
+    fun eventProfileScreen(): FragmentScreen = FragmentScreen {
+        EventProfileFragment()
+    }
+
+    fun lifeProfileScreen(): FragmentScreen = FragmentScreen {
+        LifeProfileFragment()
+    }
+
 }

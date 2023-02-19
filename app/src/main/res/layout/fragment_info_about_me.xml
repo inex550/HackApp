@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".features.profile.presentation.ui.InfoAboutMeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_info_about_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="Информация обо мне" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_name_about_me"
+        style="@style/OutlinedInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_info_about_me"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_name_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="имя"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_bonus_3"
+        app:layout_constraintBottom_toBottomOf="@id/ti_name_about_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ti_name_about_me" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_last_name_about_me"
+        style="@style/OutlinedInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_name_about_me"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_last_name_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="фамилия"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_bonus_3"
+        app:layout_constraintBottom_toBottomOf="@id/ti_last_name_about_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ti_last_name_about_me" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_father_name_about_me"
+        style="@style/OutlinedInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_last_name_about_me"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_father_name_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="отчество"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_bonus_3"
+        app:layout_constraintBottom_toBottomOf="@id/ti_father_name_about_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ti_father_name_about_me" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_mail_about_me"
+        style="@style/OutlinedInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_father_name_about_me"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_mail_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="почта"
+            android:inputType="textEmailAddress"
+            android:maxLength="30"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_bonus_3"
+        app:layout_constraintBottom_toBottomOf="@id/ti_mail_about_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ti_mail_about_me" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_password_about_me"
+        style="@style/OutlinedInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="60dp"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_mail_about_me"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_password_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="пароль"
+            android:inputType="textPassword"
+            android:maxLength="30"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_bonus_3"
+        app:layout_constraintBottom_toBottomOf="@id/ti_password_about_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ti_password_about_me" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_role_about_me"
+        style="@style/OutlinedInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_password_about_me"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_role_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="роль"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_bonus_3"
+        app:layout_constraintBottom_toBottomOf="@id/ti_role_about_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ti_role_about_me" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_pol_about_me"
+        style="@style/OutlinedInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_role_about_me"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_pol_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="пол"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_bonus_3"
+        app:layout_constraintBottom_toBottomOf="@id/ti_pol_about_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ti_pol_about_me" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_data_about_me"
+        style="@style/OutlinedInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_pol_about_me"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_data_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="дата"
+            android:inputType="date"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_bonus_3"
+        app:layout_constraintBottom_toBottomOf="@id/ti_data_about_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ti_data_about_me" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_git_about_me"
+        style="@style/OutlinedInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_data_about_me"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_git_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="git"
+            android:inputType="text"
+            android:maxLength="30"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_bonus_3"
+        app:layout_constraintBottom_toBottomOf="@id/ti_git_about_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ti_git_about_me" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_save_about_me"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:text="Сохранить изменения"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/ti_git_about_me" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

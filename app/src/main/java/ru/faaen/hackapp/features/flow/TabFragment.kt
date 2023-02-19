@@ -15,7 +15,6 @@ import ru.faaen.hackapp.core.navigation.navigator.HCNavigator
 import ru.faaen.hackapp.core.navigation.sub.CiceroneHolder
 import ru.faaen.hackapp.core.ui.base.BaseFragment
 import ru.faaen.hackapp.core.ui.ext.withArgs
-import ru.faaen.hackapp.features.profile.ProfileFragment
 
 class TabFragment: BaseFragment(
     layoutResId = R.layout.fragment_tab

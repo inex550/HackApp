@@ -41,24 +41,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/im_mountain_profile" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_profile"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/im_profile"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            app:cardCornerRadius="70dp"
+            android:scaleType="centerCrop"
+            app:strokeWidth="5dp"
+            android:padding="3dp"
+            app:strokeColor="@color/light_grey"
+            android:background="@color/white"
+            app:shapeAppearanceOverlay="@style/ShapeOval"
+            android:src="@drawable/ic_person"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/im_mountain_profile"
-            tools:layout_editor_absoluteY="70dp">
-
-            <ImageView
-                android:id="@+id/im_profile"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_person_pin_24" />
-
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toBottomOf="@id/im_mountain_profile"/>
 
         <ImageView
             android:id="@+id/im_profile_click"
@@ -66,14 +63,14 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_image_profile"
             android:translationZ="10dp"
-            app:layout_constraintBottom_toBottomOf="@id/card_view_profile"
-            app:layout_constraintEnd_toEndOf="@id/card_view_profile" />
+            app:layout_constraintBottom_toBottomOf="@id/im_profile"
+            app:layout_constraintEnd_toEndOf="@id/im_profile" />
 
         <TextView
             android:id="@+id/tv_name_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:text="@string/team_faane"
             android:textAlignment="center"
             android:textSize="24sp"
@@ -86,7 +83,7 @@
             android:id="@+id/tv_mail_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:text="@string/team_faane_mail"
             android:textAlignment="center"
             android:textSize="16sp"
@@ -98,7 +95,7 @@
             android:id="@+id/button_about_me_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:text="Информация обо мне"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,22 +106,33 @@
             android:id="@+id/button_my_order_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="История событий"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="@id/button_about_me_profile"
             app:layout_constraintStart_toStartOf="@id/button_about_me_profile"
             app:layout_constraintTop_toBottomOf="@id/button_about_me_profile" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_my_life_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="История проживаний"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@id/button_my_order_profile"
+            app:layout_constraintStart_toStartOf="@id/button_my_order_profile"
+            app:layout_constraintTop_toBottomOf="@id/button_my_order_profile" />
+
         <View
             android:id="@+id/view_profile"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_my_order_profile" />
+            app:layout_constraintTop_toBottomOf="@id/button_my_life_profile" />
 
         <TextView
             android:id="@+id/tv_achievements"
@@ -181,7 +189,7 @@
             android:id="@+id/button_goals_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:backgroundTint="@color/yellow"
             android:text="Поставить цель"
             android:textAllCaps="false"
@@ -189,7 +197,7 @@
             app:cornerRadius="18dp"
             app:icon="@drawable/award"
             app:iconTint="@color/black"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_achievements" />
