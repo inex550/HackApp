@@ -76,8 +76,8 @@ class NetworkModule {
     }
 
     companion object {
-        const val BASE_URL = "http://10.178.132.98:8000/"
-        const val BASE_AUTH_URL = "http://10.178.132.98:8001/"
+        const val BASE_URL = "http://192.168.114.98:8000/"
+        const val BASE_AUTH_URL = "http://192.168.114.98:8001/"
 
         const val OKHTTP_TAG = "OkHttp"
     }
