@@ -60,5 +60,6 @@
     <string name="ssl_handshake_error">Проверьте дату и время на устройстве</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="exit">Выход</string>
 
 </resources>

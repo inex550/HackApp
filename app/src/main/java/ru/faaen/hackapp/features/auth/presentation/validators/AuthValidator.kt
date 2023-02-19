@@ -11,7 +11,7 @@ class AuthValidator @Inject constructor(
     fun validFio(fio: String): String? {
         val words = fio.split(" ");
         if (words.size != 2 && words.size != 3)
-            return context.getString(R.string.incorrect_email_error)
+            return context.getString(R.string.fio_error)
         return null
     }
 

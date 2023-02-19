@@ -9,7 +9,22 @@
         android:id="@+id/toolbar_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="Профиль" />
+        app:title="Профиль">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/exit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exit"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textSize="18sp"
+            app:rippleColor="#F44336"
+            android:textColor="#F44336"
+            android:textAllCaps="false"
+            android:layout_gravity="end"
+            android:layout_marginEnd="14dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

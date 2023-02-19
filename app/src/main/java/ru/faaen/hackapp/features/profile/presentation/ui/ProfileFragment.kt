@@ -10,8 +10,10 @@ import android.provider.MediaStore
 import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.core.app.ActivityCompat
+import dagger.hilt.android.AndroidEntryPoint
 import ru.faaen.hackapp.R
 import ru.faaen.hackapp.core.navigation.Screens
+import ru.faaen.hackapp.core.prefs.PreferenceStorage
 import ru.faaen.hackapp.core.ui.anim.MyBounceInterpolator
 import ru.faaen.hackapp.core.ui.base.BaseFragment
 import ru.faaen.hackapp.core.ui.ext.viewBinding
@@ -19,10 +21,15 @@ import ru.faaen.hackapp.databinding.FragmentHomeBinding
 import ru.faaen.hackapp.databinding.FragmentProfileBinding
 import ru.faaen.hackapp.features.profile.data.InfoAboutMes
 import java.io.IOException
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class ProfileFragment : BaseFragment(
     layoutResId = R.layout.fragment_profile
 ) {
+    @Inject
+    lateinit var prefs: PreferenceStorage
+
     private val binding by viewBinding(FragmentProfileBinding::bind)
 
     private var image: Bitmap? = null
@@ -31,6 +38,10 @@ class ProfileFragment : BaseFragment(
         with(binding) {
             if (image != null) {
                 imProfile.setImageBitmap(image)
+            }
+
+            exitBtn.setOnClickListener {
+                exitFromAccount()
             }
 
             imBackProfile.setOnClickListener {
@@ -65,6 +76,11 @@ class ProfileFragment : BaseFragment(
             tvMailProfile.text = InfoAboutMes.mail
 
         }
+    }
+
+    private fun exitFromAccount() {
+        prefs.username = null
+        requireLocalRouter().replaceScreen(Screens.loginScreen(Screens.profileScreen()))
     }
 
     override fun onBackPressed(): Boolean {
