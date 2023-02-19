@@ -5,7 +5,7 @@
         <item name="boxStrokeColor">@color/outlined_stroke_color</item>
         <item name="android:textColorHint">@color/light_grey</item>
         <item name="endIconTint">@color/light_grey</item>
-        <item name="startIconTint">@color/light_grey</item>
+        <item name="startIconTint">@color/outlined_stroke_color</item>
     </style>
 
     <style name="HCEditText">
@@ -33,6 +33,10 @@
 
     <style name="TB_12" parent="TN_12">
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ShapeCorner5">
+        <item name="cornerSize">5%</item>
     </style>
 
     <style name="ShapeCorner10">

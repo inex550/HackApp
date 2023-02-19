@@ -12,11 +12,11 @@ class TokenInterceptor @Inject constructor(
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
 
-        if (prefs.token != null) {
-            request = request.newBuilder()
-                .addHeader("Authorization", "Bearer ${prefs.token}")
-                .build()
-        }
+//        if (prefs.token != null) {
+//            request = request.newBuilder()
+//                .addHeader("Authorization", "Bearer ${prefs.token}")
+//                .build()
+//        }
 
         return chain.proceed(request)
     }

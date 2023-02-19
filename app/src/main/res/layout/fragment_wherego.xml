@@ -43,6 +43,12 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_grey"
+        android:layout_marginTop="8dp"/>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -57,7 +63,6 @@
             tools:listitem="@layout/item_where_place"
             tools:itemCount="4"
             android:paddingHorizontal="20dp"
-            android:paddingVertical="10dp"
             android:clipToPadding="false"/>
 
         <View

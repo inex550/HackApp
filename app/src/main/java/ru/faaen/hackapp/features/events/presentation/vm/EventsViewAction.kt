@@ -1,4 +1,4 @@
-package ru.faaen.hackapp.features.events.vm
+package ru.faaen.hackapp.features.events.presentation.vm
 
 import ru.faaen.hackapp.core.ui.base.BaseViewAction
 

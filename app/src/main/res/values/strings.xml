@@ -44,5 +44,18 @@
 
     <string name="team_faane">Team FAANE</string>
     <string name="team_faane_mail">.@TeamFaane</string>
+    <string name="date">Дата</string>
+    <string name="select_date">Выберите дату</string>
+    <string name="good_morning">Добре утро %s!</string>
+    <string name="splash_text">Время открывать\nновые горизонты!</string>
+
+    <string name="balance">Баланс: %d рубинов</string>
+    <string name="price">%d рубинов</string>
+
+    <string name="scientific">Научно-популярные</string>
+    <string name="cultural">Культурно-позновательные</string>
+    <string name="proforientation">Профориентация</string>
+    <string name="timeout_error">Время ожидания истекло</string>
+    <string name="ssl_handshake_error">Проверьте дату и время на устройстве</string>
 
 </resources>

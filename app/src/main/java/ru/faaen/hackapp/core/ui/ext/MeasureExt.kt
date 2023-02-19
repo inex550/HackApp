@@ -3,7 +3,7 @@ package ru.faaen.hackapp.core.ui.ext
 import android.view.View
 
 fun View.measureDimension(desiredSize: Int, measureSpec: Int): Int {
-    var result = 0
+    var result: Int
     val mode = View.MeasureSpec.getMode(measureSpec)
     val size = View.MeasureSpec.getSize(measureSpec)
 

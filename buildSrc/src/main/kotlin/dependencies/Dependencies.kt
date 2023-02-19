@@ -1,4 +1,4 @@
-package dependencies
+package buildSrc.dependencies
 
 object Dependencies {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
@@ -18,6 +18,9 @@ object Dependencies {
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
     const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModelKtx}"
     const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"
+
+    const val firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebaseBom}"
+    const val firebaseMessaging = "com.google.firebase:firebase-messaging-ktx:${Versions.firebaseMessaging}"
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val converterGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"

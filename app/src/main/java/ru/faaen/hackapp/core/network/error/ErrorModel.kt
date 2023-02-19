@@ -5,5 +5,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class ErrorModel(
-    val message: String?
-): Parcelable
+    val detail: String?
+): Parcelable {
+
+    val message: String get() = detail.orEmpty()
+}

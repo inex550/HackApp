@@ -5,10 +5,14 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import ru.faaen.hackapp.core.ui.base.BaseViewModel
+import ru.faaen.hackapp.features.events.presentation.vm.EventsUiBuilder
+import ru.faaen.hackapp.features.wherego.data.repo.WhereGoRepository
+import ru.faaen.hackapp.features.wherego.presentation.ui.adapter.WherePlaceItem
 
 class WhereGoViewModel @AssistedInject constructor(
     @Assisted private val router: Router,
-    private val uiBuilder: WhereGoUiBuilder,
+    private val repository: WhereGoRepository,
+    private val uiBuilder: EventsUiBuilder<WherePlaceItem>,
 ): BaseViewModel<WhereGoViewState, WhereGoViewAction>(
     initialState = WhereGoViewState(
         filters = uiBuilder.getFilters(),
@@ -18,6 +22,21 @@ class WhereGoViewModel @AssistedInject constructor(
 
     override fun provideDefaultMessageError(message: String): WhereGoViewAction {
         return WhereGoViewAction.ShowSnackbarError(message)
+    }
+
+    init {
+        loadPlaces()
+    }
+
+    private fun loadPlaces() {
+        launchIOCoroutine(
+            finallyListener = { updateState { copy(items = uiBuilder.getItems()) } }
+        ) {
+            val locations = repository.loadPlaces()
+
+            uiBuilder.clearShimmer()
+            uiBuilder.setLocations(locations)
+        }
     }
 
     @AssistedFactory

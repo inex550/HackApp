@@ -12,6 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.faaen.hackapp.BuildConfig
 import ru.faaen.hackapp.core.network.api.ApiService
+import ru.faaen.hackapp.core.network.api.AuthApiService
 import ru.faaen.hackapp.core.network.api.TokenInterceptor
 import ru.faaen.hackapp.core.network.api.HCCookieJar
 import timber.log.Timber
@@ -53,9 +54,9 @@ class NetworkModule {
         gson: Gson
     ): Retrofit {
         val builder = Retrofit.Builder()
+            .baseUrl(BASE_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl(BASE_URL)
 
         return builder.build()
     }
@@ -63,11 +64,20 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
+        val rt = retrofit.newBuilder().baseUrl(BASE_URL).build()
+        return rt.create(ApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideAuthApiService(retrofit: Retrofit): AuthApiService {
+        val rt = retrofit.newBuilder().baseUrl(BASE_AUTH_URL).build()
+        return rt.create(AuthApiService::class.java)
     }
 
     companion object {
-        const val BASE_URL = ""
+        const val BASE_URL = "http://10.178.132.98:8000/"
+        const val BASE_AUTH_URL = "http://10.178.132.98:8001/"
 
         const val OKHTTP_TAG = "OkHttp"
     }

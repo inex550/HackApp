@@ -12,6 +12,7 @@ import ru.faaen.hackapp.core.common.utils.uiLazy
 import ru.faaen.hackapp.core.navigation.RouterProvider
 import ru.faaen.hackapp.core.navigation.Screens
 import ru.faaen.hackapp.core.navigation.navigator.HCNavigator
+import ru.faaen.hackapp.core.prefs.PreferenceStorage
 import ru.faaen.hackapp.core.ui.base.BaseFragment
 import javax.inject.Inject
 
@@ -23,6 +24,9 @@ class AppActivity : AppCompatActivity(), RouterProvider {
 
     @Inject
     lateinit var navigatorHolder: NavigatorHolder
+
+    @Inject
+    lateinit var prefs: PreferenceStorage
 
     private val navigator: HCNavigator by uiLazy {
         object : HCNavigator(this, R.id.app_container) {
@@ -47,7 +51,7 @@ class AppActivity : AppCompatActivity(), RouterProvider {
         setContentView(R.layout.activity_app)
 
         if (savedInstanceState == null) {
-            router.newRootScreen(Screens.loginScreen(Screens.flowScreen()))
+            router.newRootScreen(Screens.splashScreen(prefs.isAuthorized()))
         }
     }
 
@@ -60,7 +64,9 @@ class AppActivity : AppCompatActivity(), RouterProvider {
     }
 
     override fun onBackPressed() {
-         visibleFragment()?.onBackPressed() ?: super.onBackPressed()
+         if (visibleFragment()?.onBackPressed() == false) {
+             super.onBackPressed()
+         }
     }
 
     override fun onResumeFragments() {

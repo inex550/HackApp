@@ -14,6 +14,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_filter_option"/>
+        tools:listitem="@layout/item_filter_option"
+        android:paddingVertical="8dp"
+        android:clipToPadding="false"/>
 
 </androidx.cardview.widget.CardView>

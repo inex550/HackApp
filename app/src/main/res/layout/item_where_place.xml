@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             tools:src="@color/light_grey"
+            android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/ShapeCorner10"
             app:layout_constraintDimensionRatio="3:1"
             app:layout_constraintTop_toTopOf="parent"
@@ -40,7 +41,7 @@
             app:layout_constraintGuide_end="12dp"/>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/center_guideline"
+            android:id="@+id/half_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -88,7 +89,7 @@
             android:textColor="@color/dark"
             android:text="@string/count_options"
             app:layout_constraintTop_toBottomOf="@id/city_tv"
-            app:layout_constraintStart_toStartOf="@id/center_guideline"/>
+            app:layout_constraintStart_toStartOf="@id/half_guideline"/>
 
         <TextView
             android:id="@+id/stay_duration_tv"

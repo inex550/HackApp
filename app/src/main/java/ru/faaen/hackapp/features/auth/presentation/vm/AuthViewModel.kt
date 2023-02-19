@@ -7,6 +7,7 @@ import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import ru.faaen.hackapp.core.common.ext.*
 import ru.faaen.hackapp.core.navigation.Screens
+import ru.faaen.hackapp.core.prefs.PreferenceStorage
 import ru.faaen.hackapp.core.ui.base.BaseViewModel
 import ru.faaen.hackapp.features.auth.data.repo.AuthRepository
 import ru.faaen.hackapp.features.auth.presentation.validators.AuthFields
@@ -15,6 +16,7 @@ import ru.faaen.hackapp.features.auth.presentation.validators.AuthValidator
 class AuthViewModel @AssistedInject constructor(
     @Assisted private val router: Router,
     @Assisted private val nextScreen: Screen?,
+    private val prefs: PreferenceStorage,
     private val authValidator: AuthValidator,
     private val repository: AuthRepository,
 ) : BaseViewModel<AuthViewState, AuthViewAction>(
@@ -54,7 +56,8 @@ class AuthViewModel @AssistedInject constructor(
         ) {
             updateState { copy(isLoading = true) }
 
-            repository.login(email, password)
+            val user = repository.login(email, password)
+            prefs.username = user.username
 
             val newScreen = nextScreen ?: Screens.homeScreen()
             router.replaceScreen(newScreen)
@@ -80,7 +83,8 @@ class AuthViewModel @AssistedInject constructor(
         ) {
             updateState { copy(isLoading = true) }
 
-            repository.register(fio, email, password)
+            val user = repository.register(fio, email, password)
+            prefs.username = user.username
 
             val newScreen = nextScreen ?: Screens.homeScreen()
             router.replaceScreen(newScreen)

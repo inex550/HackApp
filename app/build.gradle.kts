@@ -1,8 +1,10 @@
-import dependencies.Dependencies
+import buildSrc.dependencies.Dependencies
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
+    id("com.google.gms.google-services")
 
     id("kotlin-parcelize")
 
@@ -56,14 +58,16 @@ dependencies {
     implementation(Dependencies.lifecycleRuntimeKtx)
     implementation(Dependencies.viewModelKtx)
 
+    implementation(Dependencies.firebaseBom)
+    implementation(Dependencies.firebaseMessaging)
+
     implementation(Dependencies.retrofit)
     implementation(Dependencies.converterGson)
 
     implementation(Dependencies.cicerone)
 
     implementation(Dependencies.hilt)
-    implementation("com.google.android.gms:play-services-maps:18.0.2")
-    implementation("androidx.appcompat:appcompat:1.4.1")
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
     kapt(Dependencies.hiltCompiler)
 
     implementation(Dependencies.timber)

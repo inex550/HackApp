@@ -7,16 +7,20 @@ import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.Screen
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import dagger.hilt.android.AndroidEntryPoint
 import ru.faaen.hackapp.R
 import ru.faaen.hackapp.core.common.utils.uiLazy
 import ru.faaen.hackapp.core.navigation.RouterProvider
 import ru.faaen.hackapp.core.navigation.Screens
 import ru.faaen.hackapp.core.navigation.navigator.HCNavigator
 import ru.faaen.hackapp.core.navigation.sub.CiceroneHolder
+import ru.faaen.hackapp.core.prefs.PreferenceStorage
 import ru.faaen.hackapp.core.ui.base.BaseFragment
 import ru.faaen.hackapp.core.ui.ext.withArgs
 import ru.faaen.hackapp.features.profile.ProfileFragment
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class TabFragment: BaseFragment(
     layoutResId = R.layout.fragment_tab
 ), RouterProvider {
@@ -35,6 +39,9 @@ class TabFragment: BaseFragment(
     private val navigatorHolder: NavigatorHolder by uiLazy {
         cicerone.getNavigatorHolder()
     }
+
+    @Inject
+    lateinit var prefs: PreferenceStorage
 
     private val navigator: HCNavigator by uiLazy {
         object : HCNavigator(requireActivity(), R.id.tab_container, childFragmentManager) {
@@ -65,7 +72,13 @@ class TabFragment: BaseFragment(
         return when(tag) {
             TabTag.TAG_SEARCH.tag -> Screens.searchScreen()
             TabTag.TAG_HOME.tag -> Screens.homeScreen()
-            TabTag.TAG_PROFILE.tag -> Screens.profileScreen()
+            TabTag.TAG_PROFILE.tag -> {
+                if (prefs.isAuthorized()) {
+                    Screens.profileScreen()
+                } else {
+                    Screens.loginScreen(nextScreen = Screens.profileScreen())
+                }
+            }
             else -> throw IllegalArgumentException("No such fragment with tag \"$tag\"")
         }
     }

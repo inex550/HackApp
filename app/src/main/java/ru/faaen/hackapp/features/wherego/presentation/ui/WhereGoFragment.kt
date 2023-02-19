@@ -2,6 +2,7 @@ package ru.faaen.hackapp.features.wherego.presentation.ui
 
 import dagger.hilt.android.AndroidEntryPoint
 import ru.faaen.hackapp.R
+import ru.faaen.hackapp.core.common.adapter.ShimmerAdapter
 import ru.faaen.hackapp.core.common.utils.uiLazy
 import ru.faaen.hackapp.core.ui.base.BaseMvvmFragment
 import ru.faaen.hackapp.core.ui.ext.renderIn
@@ -12,9 +13,7 @@ import ru.faaen.hackapp.core.ui.recycler.ConcatAdapter
 import ru.faaen.hackapp.databinding.FragmentWheregoBinding
 import ru.faaen.hackapp.features.wherego.data.models.FilterOption
 import ru.faaen.hackapp.features.wherego.data.models.Filters
-import ru.faaen.hackapp.features.wherego.presentation.ui.adapter.FilterAdapter
-import ru.faaen.hackapp.features.wherego.presentation.ui.adapter.WherePlaceItem
-import ru.faaen.hackapp.features.wherego.presentation.ui.adapter.WherePlacesAdapter
+import ru.faaen.hackapp.features.wherego.presentation.ui.adapter.*
 import ru.faaen.hackapp.features.wherego.presentation.vm.WhereGoViewAction
 import ru.faaen.hackapp.features.wherego.presentation.vm.WhereGoViewModel
 import ru.faaen.hackapp.features.wherego.presentation.vm.WhereGoViewState
@@ -39,7 +38,15 @@ class WhereGoFragment: BaseMvvmFragment<WhereGoViewState, WhereGoViewAction, Whe
     private val filterAdapterListener: FilterAdapter.Listener by uiLazy {
         object : FilterAdapter.Listener {
             override fun onNewFilterOptionSelected(filter: Filters, option: FilterOption?) {
-                showSnackbarSuccess(option?.name ?: filter.title)
+
+            }
+        }
+    }
+
+    private val filterDateAdapterListener: FilterDateAdapter.Listener by uiLazy {
+        object : FilterDateAdapter.Listener {
+            override fun onNewDateSelected(item: FilterDateItem) {
+
             }
         }
     }
@@ -59,11 +66,13 @@ class WhereGoFragment: BaseMvvmFragment<WhereGoViewState, WhereGoViewAction, Whe
             }
 
             filtersRv.adapter = ConcatAdapter(
-                FilterAdapter(filterAdapterListener)
+                FilterAdapter(filterAdapterListener),
+                FilterDateAdapter(filterDateAdapterListener),
             )
 
             itemsRv.adapter = ConcatAdapter(
-                WherePlacesAdapter(wherePlaceAdapterListener)
+                WherePlacesAdapter(wherePlaceAdapterListener),
+                ShimmerAdapter(),
             )
         }
     }

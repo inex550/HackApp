@@ -7,13 +7,14 @@ import javax.inject.Inject
 class PreferenceStorage @Inject constructor(
     private val prefs: SharedPreferences
 ) {
-    var token: String? by StringPreference(prefs, KEY_TOKEN, null)
+    var username: String? by StringPreference(prefs, KEY_USERNAME, null)
 
     fun isAuthorized(): Boolean {
-        return token != null
+        return username != null
     }
 
     companion object {
         private const val KEY_TOKEN = "KEY_TOKEN"
+        private const val KEY_USERNAME = "KEY_USERNAME"
     }
 }

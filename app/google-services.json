@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "844016809",
+    "project_id": "hackapp-b7e68",
+    "storage_bucket": "hackapp-b7e68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844016809:android:a94eb4ff44efd0754dcdb8",
+        "android_client_info": {
+          "package_name": "ru.faaen.hackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844016809-c3p0uks2mnti0dc100b3f1m9siqb1nmn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqhZ3SV2djrtrxb50AaREqSkoRohxXUAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844016809-c3p0uks2mnti0dc100b3f1m9siqb1nmn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package dependencies
+package buildSrc.dependencies
 
 object Versions {
     const val appCompat = "1.5.1"
@@ -12,6 +12,9 @@ object Versions {
     const val fragmentKtx = "1.5.2"
     const val viewModelKtx = "2.5.1"
     const val lifecycleRuntimeKtx = "2.5.1"
+
+    const val firebaseBom = "31.2.2"
+    const val firebaseMessaging = "23.1.1"
 
     const val retrofit = "2.9.0"
     const val cicerone = "7.1"
